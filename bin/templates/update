@@ -24,16 +24,21 @@ File.open("#{root}/.gemrc", "w") do |f|
   }.to_yaml)
 end
 
-gem_config['gems'].each do |g|
-  name_and_version = "#{g['name']}"
-  if v = g['version']
-    name_and_version << " --version='#{v}'"
-  end
+File.open('config/dependencies.rb', 'w') do |fp|
+  fp.puts "# auto generated from config/gems.yml"
+  gem_config['gems'].each do |g|
+    name_and_version = "#{g['name']}"
+    if v = g['version']
+      name_and_version << " --version='#{v}'"
+    end
 
-  next if system("#{command_source} spec #{name_and_version} >/dev/null 2>/dev/null")
-  puts "Installing #{name_and_version}"
-  unless system("#{command_source} install #{name_and_version} --no-ri --no-rdoc")
-    abort "Failed to install #{g.inspect}"
+    fp.puts "dependency '#{g['require']}', '#{g['version'].gsub(/\<\>=/, '')}'" if g['require']
+    next if system("#{command_source} spec #{name_and_version} >/dev/null 2>/dev/null")
+    puts "Installing #{name_and_version}"
+    unless system("#{command_source} install #{name_and_version} --no-ri --no-rdoc")
+      abort "Failed to install #{g.inspect}"
+    end
+
   end
 end
 
