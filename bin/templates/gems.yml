@@ -32,6 +32,9 @@ gems:
   - name: merb-core
     version: '=0.9.12'
     require: merb-core
+  
+  - name: merb-gen
+    version: '=0.9.12'
 
   - name: merb-param-protection
     version: '=0.9.12'
@@ -40,6 +43,14 @@ gems:
   - name: merb-haml
     version: '=0.9.12'
     require: merb-haml
+    
+  - name: merb-auth-core
+    version: '=0.9.12'
+    require: merb-auth-core
+
+  - name: merb-auth-more
+    version: '=0.9.12'
+    require: merb-auth-more
     
   - name: merb-cache
     version: '=0.9.12'
