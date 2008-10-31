@@ -35,17 +35,25 @@ gems:
 
   - name: merb-param-protection
     version: '=0.9.12'
-    require: merb_param_protection
+    require: merb-param-protection
 
   - name: merb-haml
     version: '=0.9.12'
     require: merb-haml
+    
+  - name: merb-cache
+    version: '=0.9.12'
+    require: merb-cache
+  
+  - name: merb-helpers
+    version: '=0.9.12'
+    require: merb-helpers
 
   - name: merb-assets
     version: '=0.9.12'
     require: merb-assets
 
-  - name: merb-action-args
+  - name: merb-action-args?
     version: '=0.9.12'
     require: merb-action-args
 
