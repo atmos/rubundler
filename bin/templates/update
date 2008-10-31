@@ -32,7 +32,7 @@ File.open('config/dependencies.rb', 'w') do |fp|
       name_and_version << " --version='#{v}'"
     end
 
-    fp.puts "dependency '#{g['require']}', '#{g['version'].gsub(/\<\>=/, '')}'" if g['require']
+    fp.puts "dependency '#{g['require']}', '#{g['version'].gsub(%r![<>=]!, '')}'" if g['require']
     next if system("#{command_source} spec #{name_and_version} >/dev/null 2>/dev/null")
     puts "Installing #{name_and_version}"
     unless system("#{command_source} install #{name_and_version} --no-ri --no-rdoc")
