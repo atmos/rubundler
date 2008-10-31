@@ -1,0 +1,8 @@
+== tcs_merb_gem_bundler
+
+A gem that provides a functional gem bundler for merb 0.9.12 and higher!
+
+Tim Carey-Smith made this for our project at work.  We don't waste time with
+gem conflicts anymore.
+
+That is all.

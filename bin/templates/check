@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+begin
+  root = File.expand_path(File.dirname(__FILE__) + '/..')
+  ENV["GEM_HOME"] = root + '/gems'
+  ENV["GEM_PATH"] = root + '/gems'
+
+  require 'rubygems'
+  gem 'merb-core', '=0.9.7'
+  require 'merb-core'
+
+  Merb.start_environment(:adapter => 'runner', :environment => ENV['MERB_ENV'] || 'development')
+  DataMapper.repository.adapter.query "SELECT 1"
+
+  puts "OK, You can start Merb successfully!"
+rescue Exception => e
+  puts "Got an exception: #{e.class}, #{e.message}"
+  puts e.backtrace
+  exit 1
+end

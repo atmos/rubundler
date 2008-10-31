@@ -1,0 +1,85 @@
+---
+sources:
+  - http://gems.rubyforge.org/
+
+gems:
+  - name: rspec
+    version: 1.1.5
+    implied: true
+
+  - name: ruby-debug
+    implied: true
+
+  - name: rake
+    implied: true
+
+  - name: rcov
+    implied: true
+
+  - name: mongrel
+    implied: true
+
+  - name: rr
+    implied: true
+
+  - name: libxml-ruby
+    implied: true
+
+  - name: extlib
+    version: '>=0.9.6'
+    require: extlib
+
+  - name: merb-core
+    version: '=0.9.7'
+    require: merb-core
+
+  - name: merb_helpers
+    version: '=0.9.7'
+    require: merb_helpers
+
+  - name: merb_param_protection
+    version: '=0.9.7'
+    require: merb_param_protection
+
+  - name: merb-haml
+    version: '=0.9.7'
+    require: merb-haml
+
+  - name: merb-assets
+    version: '=0.9.7'
+    require: merb-assets
+
+  - name: merb-action-args
+    version: '=0.9.7'
+    require: merb-action-args
+
+  - name: merb_datamapper
+    version: '=0.9.6'
+    require: merb_datamapper
+
+  - name: dm-core
+    version: '=0.9.6'
+    require: 'dm-core'
+
+  - name: dm-validations
+    version: '=0.9.6'
+    require: dm-validations
+
+  - name: dm-serializer
+    version: '=0.9.6'
+    require: dm-serializer
+
+  - name: dm-timestamps
+    version: '=0.9.6'
+    require: dm-timestamps
+
+  - name: dm-types
+    version: '=0.9.6'
+    require: dm-types
+
+  - name: do_postgres
+    version: '=0.9.6'
+    
+  - name: merb_hoptoad_notifier
+    version: '=0.9.7'
+    require: merb_hoptoad_notifier

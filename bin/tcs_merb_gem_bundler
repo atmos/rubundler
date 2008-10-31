@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+directory = File.expand_path(File.dirname(__FILE__)+'/../')
+
+print "I'm about to create a script folder and copy your gems.yml into place, cool? (y/n) "
+str = gets
+exit 1 unless str =~ /^y/i
+
+FileUtils.cp "#{directory}/bin/templates/gems.yml", 'config'
+FileUtils.mkdir 'script'
+Dir["#{directory}/bin/templates/*"].each do |dir|
+  next if dir =~ /\.yml$/
+  FileUtils.cp dir, 'script/'
+end
+
+puts "You should run script/update now to bootstrap you environment"
