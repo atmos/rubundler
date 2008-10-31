@@ -6,17 +6,17 @@ require 'spec/rake/spectask'
 
 GEM = "tcs_merb_gem_bundler"
 GEM_VERSION = "0.0.1"
-AUTHOR = "Your Name"
-EMAIL = "Your Email"
-HOMEPAGE = "http://example.com"
-SUMMARY = "A gem that provides..."
+AUTHOR = "Corey Donohoe as Proxy for TCS Himself"
+EMAIL = "atmos@atmos.org"
+HOMEPAGE = "http://github.com/atmos/tcs_merb_gem_bundler/tree/master"
+SUMMARY = "A gem that provides functional gem bundling in merb"
 
 spec = Gem::Specification.new do |s|
   s.name = GEM
   s.version = GEM_VERSION
   s.platform = Gem::Platform::RUBY
   s.has_rdoc = true
-  s.extra_rdoc_files = ["README", "LICENSE", 'TODO']
+  s.extra_rdoc_files = ["README.rdoc", "LICENSE", 'TODO']
   s.summary = SUMMARY
   s.description = s.summary
   s.author = AUTHOR
@@ -28,7 +28,9 @@ spec = Gem::Specification.new do |s|
   
   s.require_path = 'lib'
   s.autorequire = GEM
-  s.files = %w(LICENSE README Rakefile TODO) + Dir.glob("{lib,spec}/**/*")
+  s.files = %w(LICENSE README.rdoc Rakefile TODO) + Dir.glob("{bin,lib,spec}/**/*")
+  s.bindir = "bin"
+  s.executables = %w( tcs_merb_gem_bundler )
 end
 
 task :default => :spec
