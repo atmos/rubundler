@@ -33,11 +33,7 @@ gems:
     version: '=0.9.12'
     require: merb-core
 
-  - name: merb_helpers
-    version: '=0.9.12'
-    require: merb_helpers
-
-  - name: merb_param_protection
+  - name: merb-param-protection
     version: '=0.9.12'
     require: merb_param_protection
 
@@ -79,7 +75,3 @@ gems:
 
   - name: do_postgres
     version: '=0.9.6'
-    
-  - name: merb_hoptoad_notifier
-    version: '=0.9.7'
-    require: merb_hoptoad_notifier
