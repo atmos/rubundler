@@ -16,22 +16,4 @@ script/spec   - load the spec executable with the correct gem environment
 script/rake   - load the rake executable with the correct gem environment
 script/merb   - load the merb executable with the correct gem environment
 
-You should also setup your init.rb to work like the following instead of config/dependencies.rb
-
-require 'yaml'
-gem_config = YAML.load_file(Merb.root / "config" / "gems.yml")
-gem_config['gems'].each do |g|
-  next if g['implied']
-
-  if v = g['version']
-    gem g['name'], v
-  else
-    gem g['name']
-  end
-
-  if r = g['require']
-    require r
-  end
-end
-
-That is all.
+Running script/update will regenerate your config/dependencies.rb file
