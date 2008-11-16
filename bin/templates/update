@@ -5,6 +5,7 @@ require 'yaml'
 if env = ARGV.shift
   ENV["MERB_ENV"] = env
 end
+ENV["PATH"] = "#{root}/gems/bin:#{ENV["PATH"]}"
 
 root = File.expand_path(File.dirname(__FILE__) + "/..")
 
