@@ -9,11 +9,10 @@ This basically sets up a gems/ folder inside of your merb application.  A set
 of scripts are provided that override the gem paths accordingly.  Here's a
 rundown of the files provided and their purpose.
 
-config/gems.yml - a list of the gems your app relies on.  
+config/dependencies.rb - a list of the gems your app relies on.  
 script/update - a script that parses your gems.yml file and installs what's missing
 script/check  - ensure that the merb environment cab be started w/ the new gem environment
-script/spec   - load the spec executable with the correct gem environment
-script/rake   - load the rake executable with the correct gem environment
-script/merb   - load the merb executable with the correct gem environment
-
-Running script/update will regenerate your config/dependencies.rb file
+bin/spec      - load the spec executable with the correct gem environment
+bin/rake      - load the rake executable with the correct gem environment
+bin/merb      - load the merb executable with the correct gem environment
+bin/merb-gen  - load the merb executable with the correct gem environment

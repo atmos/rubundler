@@ -1,16 +1,44 @@
 #!/usr/bin/env ruby
-require 'fileutils'
-directory = File.expand_path(File.dirname(__FILE__)+'/../')
 
-print "I'm about to create a script folder and copy your gems.yml into place, cool? (y/n) "
+require 'fileutils'
+directory = File.expand_path(File.dirname(__FILE__) + '/..')
+
+print "I'm about to create a script and bin folder and copy your dependencies.rb into place, cool? (y/n) "
 str = gets
 exit 1 unless str =~ /^y/i
 
-FileUtils.cp "#{directory}/bin/templates/gems.yml", 'config'
+FileUtils.cp "#{directory}/bin/templates/dependencies.rb", 'config/dependencies.rb'
+FileUtils.cp "#{directory}/bin/templates/rubundler.rb", 'config/rubundler.rb'
+
 FileUtils.mkdir_p 'script'
-Dir["#{directory}/bin/templates/*"].each do |dir|
-  next if dir =~ /\.yml$/
-  FileUtils.cp dir, 'script/'
+%w( update check ).each do |file|
+  FileUtils.cp "#{directory}/bin/templates/#{file}", "script/#{file}"
 end
+
+FileUtils.mkdir_p 'bin'
+%w( merb merb-gen rake spec ).each do |file|
+  FileUtils.cp "#{directory}/bin/templates/#{file}", "bin/#{file}"
+end
+
+puts "You need to put this at the top of the config/init.rb: "
+
+puts "--snip--"
+puts <<-EOT
+require File.dirname(__FILE__) + "/rubundler"
+r = Rubundler.new
+r.setup_env
+r.setup_requirements
+EOT
+puts "--snip--"
+
+puts "You need to put this at the top of the Rakefile: "
+puts "--snip--"
+puts <<-EOT
+require File.dirname(__FILE__) + "/rubundler"
+r = Rubundler.new
+r.setup_env
+r.setup_requirements
+EOT
+puts "--snip--"
 
 puts "You should run script/update now to bootstrap you environment"
