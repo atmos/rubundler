@@ -20,8 +20,8 @@ FileUtils.mkdir_p 'bin'
   FileUtils.cp "#{directory}/bin/templates/#{file}", "bin/#{file}"
 end
 
-puts "You need to put this at the top of the config/init.rb: "
-
+puts "You need to put this at very the top of the config/init.rb: "
+puts "You also need to remove the requirement of config/dependencies.rb"
 puts "--snip--"
 puts <<-EOT
 require File.dirname(__FILE__) + "/rubundler"
@@ -34,7 +34,7 @@ puts "--snip--"
 puts "You need to put this at the top of the Rakefile: "
 puts "--snip--"
 puts <<-EOT
-require File.dirname(__FILE__) + "/rubundler"
+require File.dirname(__FILE__) + "/config/rubundler"
 r = Rubundler.new
 r.setup_env
 r.setup_requirements
