@@ -40,4 +40,13 @@ r.setup_env
 EOT
 puts "--snip--"
 
+puts "You need to put this at the top of the spec/spec_helper.rb: "
+puts "--snip--"
+puts <<-EOT
+require File.dirname(__FILE__) + "/../config/rubundler"
+r = Rubundler.new
+r.setup_env
+EOT
+puts "--snip--"
+
 puts "You should run script/update now to bootstrap you environment"
