@@ -9,10 +9,12 @@ This basically sets up a gems/ folder inside of your merb application.  A set
 of scripts are provided that override the gem paths accordingly.  Here's a
 rundown of the files provided and their purpose.
 
-config/dependencies.rb - a list of the gems your app relies on.  
-script/update - a script that parses your gems.yml file and installs what's missing
-script/check  - ensure that the merb environment cab be started w/ the new gem environment
-bin/spec      - load the spec executable with the correct gem environment
-bin/rake      - load the rake executable with the correct gem environment
-bin/merb      - load the merb executable with the correct gem environment
-bin/merb-gen  - load the merb executable with the correct gem environment
+You get a binary called 'tcs_merb_gem_bundler' run it from your application's root
+
+* config/dependencies.rb - a list of the gems your app relies on.  
+* script/update - a script that parses your gems.yml file and installs what's missing
+* script/check  - ensure that the merb environment cab be started w/ the new gem environment
+* bin/spec      - load the spec executable with the correct gem environment
+* bin/rake      - load the rake executable with the correct gem environment
+* bin/merb      - load the merb executable with the correct gem environment
+* bin/merb-gen  - load the merb executable with the correct gem environment
