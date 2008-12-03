@@ -5,7 +5,7 @@ require 'date'
 require 'spec/rake/spectask'
 
 GEM = "tcs_merb_gem_bundler"
-GEM_VERSION = "0.0.1"
+GEM_VERSION = "0.0.2"
 AUTHOR = "Corey Donohoe as Proxy for TCS Himself"
 EMAIL = "atmos@atmos.org"
 HOMEPAGE = "http://github.com/atmos/tcs_merb_gem_bundler/tree/master"
