@@ -4,11 +4,11 @@ require 'rubygems/specification'
 require 'date'
 require 'spec/rake/spectask'
 
-GEM = "tcs_merb_gem_bundler"
-GEM_VERSION = "0.0.2"
+GEM = "rubundler"
+GEM_VERSION = "0.0.3"
 AUTHOR = "Corey Donohoe as Proxy for TCS Himself"
 EMAIL = "atmos@atmos.org"
-HOMEPAGE = "http://github.com/atmos/tcs_merb_gem_bundler/tree/master"
+HOMEPAGE = "http://github.com/atmos/rubundler/tree/master"
 SUMMARY = "A gem that provides functional gem bundling in merb"
 
 spec = Gem::Specification.new do |s|
@@ -30,7 +30,7 @@ spec = Gem::Specification.new do |s|
   s.autorequire = GEM
   s.files = %w(LICENSE README.rdoc Rakefile TODO) + Dir.glob("{bin,lib,spec}/**/*")
   s.bindir = "bin"
-  s.executables = %w( tcs_merb_gem_bundler )
+  s.executables = %w( rubundler )
 end
 
 task :default => :spec
