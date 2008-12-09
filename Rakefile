@@ -81,7 +81,7 @@ task :release do
 
   puts "Changing the version to #{next_version}."
 
-  version_file = "#{r.root}/lib/#{GEM_NAME}/version.rb"
+  version_file = "lib/#{GEM_NAME}/version.rb"
   File.open(version_file, "w") do |f|
     f.puts <<-EOT
 module Rubundler
