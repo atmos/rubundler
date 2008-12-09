@@ -4,8 +4,10 @@ require 'rubygems/specification'
 require 'date'
 require 'spec/rake/spectask'
 
+require File.dirname(__FILE__) + '/lib/rubundler/version'
+
 GEM_NAME = "rubundler"
-GEM_VERSION = "0.0.4"
+GEM_VERSION = Rubundler::VERSION
 AUTHOR = "Corey Donohoe as Proxy for TCS Himself"
 EMAIL = "atmos@atmos.org"
 HOMEPAGE = "http://github.com/atmos/rubundler/tree/master"
