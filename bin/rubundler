@@ -7,6 +7,13 @@ print "I'm about to create a script and bin folder and copy your dependencies.rb
 str = gets
 exit 1 unless str =~ /^y/i
 
+if File.exist?('config/dependencies.rb')
+  puts "You have an existing config/dependencies.rb file"
+  puts "If you are doing an upgrade, you should probably keep this around"
+  puts "Do you want to overwrite this file?"
+  str = gets
+  exit 1 unless str =~ /^y/i
+end
 FileUtils.cp "#{directory}/bin/templates/dependencies.rb", 'config/dependencies.rb'
 FileUtils.cp "#{directory}/bin/templates/rubundler.rb", 'config/rubundler.rb'
 
