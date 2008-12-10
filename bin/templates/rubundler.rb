@@ -7,9 +7,9 @@ class Rubundler
       ENV["PATH"] = "#{root}/gems/bin:#{ENV["PATH"]}"
       ENV["GEM_HOME"] = root + '/gems'
       ENV["GEM_PATH"] = root + '/gems'
-      require 'rubygems'
     end
 
+    require 'rubygems'
     gem_config.gems.each do |name,version|
       if version
         gem name, version
