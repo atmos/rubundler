@@ -2,15 +2,14 @@ require 'yaml'
 
 class Rubundler
   def setup_env
-    ENV["PATH"] = "#{root}/gems/bin:#{ENV["PATH"]}"
-    ENV["GEM_HOME"] = root + '/gems'
-    ENV["GEM_PATH"] = root + '/gems'
-
-    begin
-      require 'minigems'
-    rescue LoadError
+    unless ENV.key?("RUBUNDLED")
+      ENV["RUBUNDLED"] = "1"
+      ENV["PATH"] = "#{root}/gems/bin:#{ENV["PATH"]}"
+      ENV["GEM_HOME"] = root + '/gems'
+      ENV["GEM_PATH"] = root + '/gems'
       require 'rubygems'
     end
+
     gem_config.gems.each do |name,version|
       if version
         gem name, version
